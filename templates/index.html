@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<title>Nova — AI Assistant</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet"
+>
+
+<link
+    rel="stylesheet"
+    href="{{ url_for('static', filename='style.css') }}"
+>
+
+
+</head>
+
+<body>
+
+
+<main class="app">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+
+        <div class="brand">
+            <div class="brand-icon">N</div>
+            <span>Nova</span>
+        </div>
+
+        <button class="new-chat">
+            <span>＋</span>
+            New conversation
+        </button>
+
+        <div class="sidebar-section">
+            <p class="section-title">Today</p>
+
+            <div class="conversation active">
+                <span class="conversation-icon">◌</span>
+                New conversation
+            </div>
+        </div>
+
+        <div class="sidebar-bottom">
+            <div class="status">
+                <span class="status-dot"></span>
+                Gemini connected
+            </div>
+        </div>
+
+    </aside>
+
+
+    <!-- Main Chat -->
+    <section class="chat">
+
+        <!-- Header -->
+        <header class="chat-header">
+
+            <div>
+                <h1>Nova AI</h1>
+                <p>Your intelligent assistant</p>
+            </div>
+
+            <button class="header-button">
+                ⋯
+            </button>
+
+        </header>
+
+
+        <!-- Messages -->
+        <div id="chat-box" class="chat-box">
+
+            <div class="welcome">
+
+                <div class="welcome-icon">
+                    N
+                </div>
+
+                <h2>How can I help?</h2>
+
+                <p>
+                    Ask me anything. I'm here to help you
+                    think, create and explore.
+                </p>
+
+                <div class="suggestions">
+
+                    <button onclick="setMessage('Explain artificial intelligence simply')">
+                        Explain something
+                    </button>
+
+                    <button onclick="setMessage('Help me write a Python program')">
+                        Write code
+                    </button>
+
+                    <button onclick="setMessage('Give me some project ideas')">
+                        Get ideas
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Input -->
+        <div class="input-wrapper">
+
+            <div class="input-container">
+
+                <input
+                    type="text"
+                    id="message-input"
+                    placeholder="Message Nova..."
+                    autocomplete="off"
+                >
+
+                <button
+                    class="send-button"
+                    onclick="sendMessage()"
+                    aria-label="Send message"
+                >
+                    ↑
+                </button>
+
+            </div>
+
+            <p class="disclaimer">
+                Nova can make mistakes. Check important information.
+            </p>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
